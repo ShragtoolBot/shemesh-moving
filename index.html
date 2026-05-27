@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>שמש הובלות</title>
+  <meta name="description" content="שמש הובלות - חזקים בעדינות. לחצו על המספר לשליחת הודעת וואטסאפ.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: #67adef;
+      font-family: Arial, sans-serif;
+    }
+
+    .page {
+      position: relative;
+      display: grid;
+      min-height: 100vh;
+      overflow: hidden;
+      place-items: center;
+      background: #67adef;
+    }
+
+    .poster {
+      position: relative;
+      width: min(100vw, 80vh);
+      aspect-ratio: 4 / 5;
+      background: url("shemesh-original.jpg") center / cover no-repeat;
+    }
+
+    .whatsapp-link {
+      position: absolute;
+      display: block;
+      left: 59.5%;
+      top: 46.8%;
+      width: 35.5%;
+      height: 9.2%;
+      border-radius: 999px;
+      outline-offset: 6px;
+    }
+
+    .whatsapp-link:focus-visible {
+      outline: 4px solid #ffffff;
+    }
+
+    @media (max-aspect-ratio: 4 / 5) {
+      .poster {
+        width: 100vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="poster" role="img" aria-label="שמש הובלות - חזקים בעדינות - 050-8804928">
+      <a
+        class="whatsapp-link"
+        href="https://wa.me/972508804928?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%95%D7%91%D7%9C%D7%94"
+        aria-label="שליחת וואטסאפ לשמש הובלות 050-8804928"
+      ></a>
+    </div>
+  </main>
+</body>
+</html>
