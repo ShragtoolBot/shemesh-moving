@@ -25,10 +25,20 @@
     .page {
       position: relative;
       display: grid;
-      min-height: 100vh;
+      min-height: 100svh;
       overflow: hidden;
       place-items: center;
       background: #6eb6fe;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: -6vmax;
+      background: url("shemesh-original.jpg") center / cover no-repeat;
+      filter: blur(18px);
+      opacity: 0.42;
+      transform: scale(1.04);
     }
 
     .poster {
@@ -36,6 +46,7 @@
       width: min(100vw, 80vh);
       aspect-ratio: 4 / 5;
       background: url("shemesh-original.jpg") center / cover no-repeat;
+      isolation: isolate;
     }
 
     .whatsapp-link {
@@ -112,7 +123,7 @@
       <a
         class="whatsapp-link"
         href="https://wa.me/972508804928?text=%d7%a9%d7%9c%d7%95%d7%9d%2c+%d7%94%d7%92%d7%a2%d7%aa%d7%99+%d7%93%d7%a8%d7%9a+%d7%94%d7%90%d7%aa%d7%a8+%d7%95%d7%90%d7%a0%d7%99+%d7%9e%d7%a2%d7%95%d7%a0%d7%99%d7%99%d7%a0.%d7%aa+%d7%91%d7%94%d7%95%d7%91%d7%9c%d7%94+%3a)"
-        title="&#1500;&#1495;&#1509; &#1499;&#1488;&#1503; &#1499;&#1491;&#1497; &#1500;&#1511;&#1489;&#1493;&#1506; &#1492;&#1493;&#1489;&#1500;&#1492;"
+        title="&#1495;&#1494;&#1511;&#1497;&#1501; &#1489;&#1506;&#1491;&#1497;&#1504;&#1493;&#1514;"
         data-tooltip="&#1500;&#1495;&#1509; &#1499;&#1488;&#1503; &#1499;&#1491;&#1497; &#1500;&#1511;&#1489;&#1493;&#1506; &#1492;&#1493;&#1489;&#1500;&#1492;"
         aria-label="שליחת וואטסאפ לשמש הובלות 050-8804928"
       ></a>
