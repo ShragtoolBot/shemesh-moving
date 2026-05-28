@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>שמש הובלות</title>
-  <meta name="description" content="שמש הובלות - חזקים בעדינות. לחצו על המספר לשליחת הודעת וואטסאפ.">
+  <meta name="description" content="שמש הובלות - חזקים בעדינות. לחצו לקביעת הובלה בוואטסאפ.">
   <style>
     * {
       box-sizing: border-box;
@@ -18,59 +18,107 @@
 
     body {
       background: #6eb6fe;
+      color: #ffffff;
       font-family: Arial, sans-serif;
     }
 
     .page {
       position: relative;
       display: grid;
-      min-height: 100vh;
+      min-height: 100svh;
       overflow: hidden;
       place-items: center;
       background: #6eb6fe;
     }
 
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: -6vmax;
+      background: url("shemesh-original.jpg") center / cover no-repeat;
+      filter: blur(18px);
+      opacity: 0.42;
+      transform: scale(1.04);
+    }
+
     .poster {
       position: relative;
-      width: min(100vw, 80vh);
-      aspect-ratio: 4 / 5;
-      background: url("shemesh-original.jpg") center / cover no-repeat;
+      width: min(100vw, 80svh);
+      height: min(100svh, 125vw);
+      max-width: 100vw;
+      max-height: 100svh;
+      background: url("shemesh-original.jpg") center / auto 101% no-repeat;
+      isolation: isolate;
     }
 
     .whatsapp-link {
       position: absolute;
-      display: block;
-      left: 53.5%;
-      top: 46.8%;
-      width: 41.5%;
-      height: 9.2%;
+      left: 74%;
+      top: 52.5%;
+      display: inline-flex;
+      align-items: center;
+      gap: clamp(5px, 1vmin, 9px);
+      min-height: 5.9%;
+      padding: clamp(6px, 1.05vmin, 10px) clamp(10px, 1.7vmin, 18px);
+      border: 2px solid rgb(255 255 255 / 92%);
       border-radius: 999px;
-      outline-offset: 6px;
+      background: rgb(37 211 102 / 92%);
+      box-shadow: 0 10px 26px rgb(0 0 0 / 20%);
+      color: #ffffff;
+      font-size: clamp(0.78rem, 1.75vmin, 1rem);
+      font-weight: 800;
+      line-height: 1.15;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 1px 1px rgb(0 0 0 / 16%);
+      transform: translateX(-50%);
+      transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+      white-space: nowrap;
     }
 
+    .whatsapp-link:hover,
     .whatsapp-link:focus-visible {
-      outline: 4px solid #ffffff;
+      background: #20c95d;
+      box-shadow: 0 14px 30px rgb(0 0 0 / 24%);
+      outline: none;
+      transform: translateX(-50%) translateY(-1px);
     }
 
-    .whatsapp-link::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 12.4%;
+    .whatsapp-icon {
+      display: block;
+      width: clamp(18px, 2.8vmin, 28px);
       aspect-ratio: 1;
+      flex: 0 0 auto;
       border-radius: 50%;
       background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23fff' d='M16.04 4.5c-6.25 0-11.33 5-11.33 11.16 0 1.96.53 3.88 1.54 5.56L4.6 27.5l6.47-1.62a11.55 11.55 0 0 0 4.97 1.13c6.25 0 11.34-5 11.34-11.16S22.29 4.5 16.04 4.5Zm0 20.62c-1.7 0-3.36-.45-4.82-1.3l-.35-.2-3.83.96.97-3.72-.23-.38a9.28 9.28 0 0 1-1.42-4.82c0-5.12 4.34-9.28 9.68-9.28s9.68 4.16 9.68 9.28-4.34 9.46-9.68 9.46Zm5.3-6.93c-.29-.14-1.7-.82-1.96-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.9 1.1-.17.19-.33.21-.62.07-.29-.14-1.21-.44-2.3-1.39a8.6 8.6 0 0 1-1.59-1.95c-.17-.28-.02-.43.13-.57.13-.13.29-.33.43-.49.14-.17.19-.28.29-.47.1-.19.05-.35-.02-.49-.07-.14-.64-1.52-.88-2.08-.23-.54-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43s1.02 2.81 1.16 3c.14.19 2.01 3.02 4.86 4.24.68.29 1.21.46 1.62.59.68.21 1.3.18 1.79.11.55-.08 1.7-.68 1.94-1.34.24-.66.24-1.22.17-1.34-.07-.12-.26-.19-.55-.33Z'/%3E%3C/svg%3E") center / 70% 70% no-repeat,
-        #25d366;
-      box-shadow: 0 0 0 3px #ffffff, 0 4px 12px rgb(0 0 0 / 18%);
-      transform: translateY(-50%);
-      pointer-events: none;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23fff' d='M16.04 4.5c-6.25 0-11.33 5-11.33 11.16 0 1.96.53 3.88 1.54 5.56L4.6 27.5l6.47-1.62a11.55 11.55 0 0 0 4.97 1.13c6.25 0 11.34-5 11.34-11.16S22.29 4.5 16.04 4.5Zm0 20.62c-1.7 0-3.36-.45-4.82-1.3l-.35-.2-3.83.96.97-3.72-.23-.38a9.28 9.28 0 0 1-1.42-4.82c0-5.12 4.34-9.28 9.68-9.28s9.68 4.16 9.68 9.28-4.34 9.46-9.68 9.46Zm5.3-6.93c-.29-.14-1.7-.82-1.96-.91-.26-.1-.45-.14-.64.14-.19.28-.73.91-.9 1.1-.17.19-.33.21-.62.07-.29-.14-1.21-.44-2.3-1.39a8.6 8.6 0 0 1-1.59-1.95c-.17-.28-.02-.43.13-.57.13-.13.29-.33.43-.49.14-.17.19-.28.29-.47.1-.19.05-.35-.02-.49-.07-.14-.64-1.52-.88-2.08-.23-.54-.47-.47-.64-.48h-.55c-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43s1.02 2.81 1.16 3c.14.19 2.01 3.02 4.86 4.24.68.29 1.21.46 1.62.59.68.21 1.3.18 1.79.11.55-.08 1.7-.68 1.94-1.34.24-.66.24-1.22.17-1.34-.07-.12-.26-.19-.55-.33Z'/%3E%3C/svg%3E") center / 76% 76% no-repeat,
+        #18b957;
+      box-shadow: inset 0 0 0 2px rgb(255 255 255 / 72%);
     }
 
-    @media (max-aspect-ratio: 4 / 5) {
+    @media (max-width: 620px) {
+      .page {
+        place-items: start center;
+      }
+
+      .page::before {
+        opacity: 0;
+      }
+
       .poster {
         width: 100vw;
+        height: 125vw;
+        max-height: 100svh;
+        background-size: 101% auto;
+      }
+
+      .whatsapp-link {
+        left: 73%;
+        top: 52.5%;
+        width: min(52vw, 230px);
+        justify-content: center;
+        padding-inline: 10px;
+        white-space: normal;
       }
     }
   </style>
@@ -80,9 +128,12 @@
     <div class="poster" role="img" aria-label="שמש הובלות - חזקים בעדינות - 050-8804928">
       <a
         class="whatsapp-link"
-        href="https://wa.me/972508804928?text=%d7%a9%d7%9c%d7%95%d7%9d%2c+%d7%94%d7%92%d7%a2%d7%aa%d7%99+%d7%93%d7%a8%d7%9a+%d7%94%d7%90%d7%aa%d7%a8+%d7%95%d7%90%d7%a0%d7%99+%d7%9e%d7%a2%d7%95%d7%a0%d7%99%d7%99%d7%a0.%d7%aa+%d7%91%d7%94%d7%95%d7%91%d7%9c%d7%94+%3a)"
-        aria-label="שליחת וואטסאפ לשמש הובלות 050-8804928"
-      ></a>
+        href="https://wa.me/972508804928?text=%D7%A9%D7%9C%D7%95%D7%9D%2C+%D7%94%D7%92%D7%A2%D7%AA%D7%99+%D7%93%D7%A8%D7%9A+%D7%94%D7%90%D7%AA%D7%A8+%D7%95%D7%90%D7%A0%D7%99+%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%A0%2F%D7%AA+%D7%91%D7%94%D7%95%D7%91%D7%9C%D7%94"
+        aria-label="לחץ כאן כדי לקבוע הובלה בוואטסאפ 050-8804928"
+      >
+        <span class="whatsapp-icon" aria-hidden="true"></span>
+        <span>לחץ כאן כדי לקבוע הובלה</span>
+      </a>
     </div>
   </main>
 </body>
